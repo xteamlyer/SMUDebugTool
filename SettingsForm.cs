@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
@@ -18,9 +18,8 @@ using Application = System.Windows.Forms.Application;
 using static ZenStates.Core.Cpu;
 using Microsoft.Win32.TaskScheduler;
 using System.Security.Principal;
-using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using System.Security.Cryptography;
+using ZenStates.Core.Drivers;
 
 namespace ZenStatesDebugTool
 {
@@ -43,6 +42,7 @@ namespace ZenStatesDebugTool
         private const string filename = "co_profile.txt";
         private readonly string[] args;
         private readonly bool isApplyProfile;
+        private readonly Dictionary<int, NumericUpDown> coControls = new Dictionary<int, NumericUpDown>();
 
         public SettingsForm()
         {
@@ -116,9 +116,9 @@ namespace ZenStatesDebugTool
                 mbVendorInfoLabel.Text = cpu.systemInfo.MbVendor;
                 mbModelInfoLabel.Text = cpu.systemInfo.MbName;
                 biosInfoLabel.Text = cpu.systemInfo.BiosVersion;
-                smuInfoLabel.Text = cpu.systemInfo.GetSmuVersionString();
+                smuInfoLabel.Text = cpu.systemInfo.SmuVersionString;
                 firmwareInfoLabel.Text = $"{cpu.systemInfo.PatchLevel:X8}";
-                cpuIdLabel.Text = $"{cpu.systemInfo.GetCpuIdString()} ({cpu.info.codeName})";
+                cpuIdLabel.Text = $"{cpu.systemInfo.CpuIdString} ({cpu.info.codeName})";
                 configInfoLabel.Text = $"{cpu.info.topology.ccds} CCD / {cpu.info.topology.ccxs} CCX / {cpu.systemInfo.PhysicalCoreCount} physical cores";
             }
             catch { }
@@ -176,7 +176,9 @@ namespace ZenStatesDebugTool
             }
 
             InitCoreControl();
+            InitPboLayout();
             InitPBO();
+            InitCS();
             PopulateWmiFunctions();
 
             double? currentBclk = cpu.GetBclk();
@@ -262,7 +264,7 @@ namespace ZenStatesDebugTool
 
         private void InitCoreControl()
         {
-            uint cores = cpu.info.topology.physicalCores;
+            uint cores = (uint)GetPhysicalCoreCount();
             //var performanceOfCores = cpu.info.topology.performanceOfCore;
             uint coresPerGroup = 8;
             uint logicalIndexGroup1 = 0;
@@ -272,9 +274,9 @@ namespace ZenStatesDebugTool
             {
                 uint mapIndex = i / coresPerGroup;
                 uint coreInGroup = i % coresPerGroup;
-                bool isDisabled = ((~cpu.info.topology.coreDisableMap[mapIndex] >> (int)coreInGroup) & 1) == 0;
+                //bool isDisabled = ((~cpu.info.topology.coreDisableMap[mapIndex] >> (int)coreInGroup) & 1) == 0;
 
-                if (!isDisabled)
+                if (IsCoreEnabled((int)i))
                 {
                     try
                     {
@@ -307,29 +309,55 @@ namespace ZenStatesDebugTool
             checkBoxSMT.Checked = cpu.systemInfo.SMT;
         }
 
+        private static int ConvertMarginToInt(uint value)
+        {
+            return (sbyte)(unchecked(value));
+        }
+
+        private void InitCS(bool showStatus = false)
+        {
+            uint[] csValues = cpu.GetAllCurveShaperMargins();
+
+            cs_min_low.Value = ConvertMarginToInt(csValues[0] >> 8 & 0xFF);
+            cs_min_med.Value = ConvertMarginToInt(csValues[0] >> 16 & 0xFF);
+            cs_min_high.Value = ConvertMarginToInt(csValues[0] >> 24 & 0xFF);
+
+            cs_low_low.Value = ConvertMarginToInt(csValues[1] >> 8 & 0xFF);
+            cs_low_med.Value = ConvertMarginToInt(csValues[1] >> 16 & 0xFF);
+            cs_low_high.Value = ConvertMarginToInt(csValues[1] >> 24 & 0xFF);
+
+            cs_med_low.Value = ConvertMarginToInt(csValues[2] >> 8 & 0xFF);
+            cs_med_med.Value = ConvertMarginToInt(csValues[2] >> 16 & 0xFF);
+            cs_med_high.Value = ConvertMarginToInt(csValues[2] >> 24 & 0xFF);
+
+            cs_high_low.Value = ConvertMarginToInt(csValues[3] >> 8 & 0xFF);
+            cs_high_med.Value = ConvertMarginToInt(csValues[3] >> 16 & 0xFF);
+            cs_high_high.Value = ConvertMarginToInt(csValues[3] >> 24 & 0xFF);
+
+            cs_max_low.Value = ConvertMarginToInt(csValues[4] >> 8 & 0xFF);
+            cs_max_med.Value = ConvertMarginToInt(csValues[4] >> 16 & 0xFF);
+            cs_max_high.Value = ConvertMarginToInt(csValues[4] >> 24 & 0xFF);
+
+            if (showStatus)
+                SetStatusText("Curve Shaper margins refreshed.");
+        }
+
         private void InitPBO()
         {
             if (cpu.smu.Rsmu.SMU_MSG_SetDldoPsmMargin != 0)
             {
-                uint cores = cpu.info.topology.physicalCores;
+                uint cores = (uint)GetPhysicalCoreCount();
                 for (var i = 0; i < cores; i++)
                 {
-                    int mapIndex = i < 8 ? 0 : 1;
-                    if ((~cpu.info.topology.coreDisableMap[mapIndex] >> i % 8 & 1) == 1)
+                    if (IsCoreEnabled(i))
                     {
-                        try
+                        NumericUpDown control = GetCOControl(i);
+                        if (control != null)
                         {
-                            NumericUpDown control = (NumericUpDown)Controls.Find($"numericUpDownCO_{i}", true)[0];
-                            if (control != null)
-                            {
-                                control.Enabled = true;
-                                //uint coreMask = cpu.MakeCoreMask((uint)i);
-                                uint? margin = cpu.GetPsmMarginSingleCore(EncodeCoreMarginBitmask(i));
-                                if (margin != null)
-                                    control.Value = Convert.ToDecimal((int)margin);
-                            }
-                        } catch (Exception e) {
-                            Console.WriteLine(e);
+                            control.Enabled = true;
+                            uint? margin = cpu.GetPsmMarginSingleCore(EncodeCoreMarginBitmask(i));
+                            if (margin != null)
+                                control.Value = Convert.ToDecimal((int)margin);
                         }
                     }
                 }
@@ -346,6 +374,257 @@ namespace ZenStatesDebugTool
 
             checkBoxApplyCOStartup.Checked = TaskExists("RyzenSDT");
             numericUpDownFmax.Value = cpu.GetFMax();
+        }
+
+        private void InitPboLayout()
+        {
+            BuildCoActionBar();
+            BuildCcdBlocks();
+        }
+
+        private void BuildCoActionBar()
+        {
+            // Repurpose flowLayoutPanelCcdActions as the CO-section action bar
+            flowLayoutPanelCcdActions.Controls.Clear();
+            flowLayoutPanelCcdActions.WrapContents = false;
+            flowLayoutPanelCcdActions.Visible = true;
+
+            Button applyBtn = new Button
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Margin = new Padding(0, 0, 6, 0),
+                Padding = new Padding(8, 0, 8, 0),
+                Text = "Apply",
+                UseVisualStyleBackColor = true
+            };
+            applyBtn.Click += ButtonApplyCO_Click;
+
+            Button allDecBtn = new Button
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Margin = new Padding(0, 0, 2, 0),
+                Padding = new Padding(6, 0, 6, 0),
+                Text = "All \u2212",
+                UseVisualStyleBackColor = true
+            };
+            allDecBtn.Click += AllCcdDecrement_Click;
+
+            Button allIncBtn = new Button
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                Margin = new Padding(0),
+                Padding = new Padding(6, 0, 6, 0),
+                Text = "All +",
+                UseVisualStyleBackColor = true
+            };
+            allIncBtn.Click += AllCcdIncrement_Click;
+
+            flowLayoutPanelCcdActions.Controls.Add(applyBtn);
+            flowLayoutPanelCcdActions.Controls.Add(allDecBtn);
+            flowLayoutPanelCcdActions.Controls.Add(allIncBtn);
+        }
+
+        private void AllCcdDecrement_Click(object sender, EventArgs e)
+        {
+            int ccdCount = GetCcdCount();
+            for (int ccd = 0; ccd < ccdCount; ccd++)
+                BulkMarginChangeHandler(ccd, -1);
+        }
+
+        private void AllCcdIncrement_Click(object sender, EventArgs e)
+        {
+            int ccdCount = GetCcdCount();
+            for (int ccd = 0; ccd < ccdCount; ccd++)
+                BulkMarginChangeHandler(ccd, 1);
+        }
+
+        private void BuildCcdBlocks()
+        {
+            coControls.Clear();
+
+            flowLayoutPanelCOList.SuspendLayout();
+            flowLayoutPanelCOList.Controls.Clear();
+            flowLayoutPanelCOList.WrapContents = true;
+            flowLayoutPanelCOList.Padding = new Padding(0);
+
+            int ccdCount = GetCcdCount();
+            const int coresPerCcd = 8;
+            const int panelWidth = 160;
+            const int headerHeight = 19;
+            const int rowHeight = 21;
+            const int coresPerRow = 2;
+            // label width wide enough for "C127"
+            const int labelWidth = 30;
+            const int nudWidth = 44;
+            const int colSpacing = 6;
+            // left column x-offsets
+            const int col0LabelX = 2;
+            const int col0NudX = col0LabelX + labelWidth;
+            // right column x-offsets
+            const int col1LabelX = col0NudX + nudWidth + colSpacing;
+            const int col1NudX = col1LabelX + labelWidth;
+
+            for (int ccd = 0; ccd < ccdCount; ccd++)
+            {
+                int startCore = ccd * coresPerCcd;
+                int endCore = Math.Min(startCore + coresPerCcd, GetPhysicalCoreCount());
+                int coresInCcd = endCore - startCore;
+                if (coresInCcd <= 0) break;
+
+                int coreRows = (int)Math.Ceiling(coresInCcd / (double)coresPerRow);
+                int panelHeight = headerHeight + coreRows * rowHeight + 4;
+
+                Panel ccdPanel = new Panel
+                {
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Margin = new Padding(1),
+                    Name = $"panelCCD_{ccd}",
+                    Size = new Size(panelWidth, panelHeight)
+                };
+
+                // Header label
+                Label ccdLabel = new Label
+                {
+                    AutoSize = false,
+                    BackColor = SystemColors.ControlDark,
+                    ForeColor = SystemColors.ControlLightLight,
+                    Font = new Font("Microsoft Sans Serif", 7.5f, FontStyle.Bold),
+                    Location = new Point(0, 0),
+                    Padding = new Padding(3, 0, 0, 0),
+                    // leave room for the two small buttons on the right
+                    Size = new Size(panelWidth - 36, headerHeight),
+                    Text = $"CCD {ccd}",
+                    TextAlign = ContentAlignment.MiddleLeft
+                };
+
+                // Decrement button
+                Button decBtn = new Button
+                {
+                    BackColor = SystemColors.ControlDark,
+                    FlatStyle = FlatStyle.Flat,
+                    Font = new Font("Microsoft Sans Serif", 7f, FontStyle.Bold),
+                    ForeColor = SystemColors.ControlLightLight,
+                    Location = new Point(panelWidth - 36, 1),
+                    Margin = new Padding(0),
+                    Size = new Size(16, headerHeight - 2),
+                    Tag = Tuple.Create(ccd, -1),
+                    Text = "\u2212",
+                    UseVisualStyleBackColor = false
+                };
+                decBtn.FlatAppearance.BorderSize = 0;
+                decBtn.Click += CcdBulkButton_Click;
+
+                // Increment button
+                Button incBtn = new Button
+                {
+                    BackColor = SystemColors.ControlDark,
+                    FlatStyle = FlatStyle.Flat,
+                    Font = new Font("Microsoft Sans Serif", 7f, FontStyle.Bold),
+                    ForeColor = SystemColors.ControlLightLight,
+                    Location = new Point(panelWidth - 19, 1),
+                    Margin = new Padding(0),
+                    Size = new Size(16, headerHeight - 2),
+                    Tag = Tuple.Create(ccd, 1),
+                    Text = "+",
+                    UseVisualStyleBackColor = false
+                };
+                incBtn.FlatAppearance.BorderSize = 0;
+                incBtn.Click += CcdBulkButton_Click;
+
+                ccdPanel.Controls.Add(ccdLabel);
+                ccdPanel.Controls.Add(decBtn);
+                ccdPanel.Controls.Add(incBtn);
+
+                // Core grid: column-major (top-to-bottom, then next column)
+                int yOffset = headerHeight + 1;
+                for (int row = 0; row < coreRows; row++)
+                {
+                    for (int col = 0; col < coresPerRow; col++)
+                    {
+                        // column-major index: col 0 = cores 0..coreRows-1, col 1 = cores coreRows..end
+                        int localIndex = col * coreRows + row;
+                        if (localIndex >= coresInCcd) continue;
+
+                        int coreIndex = startCore + localIndex;
+                        int labelX = col == 0 ? col0LabelX : col1LabelX;
+                        int nudX = col == 0 ? col0NudX : col1NudX;
+
+                        Label lbl = new Label
+                        {
+                            Location = new Point(labelX, yOffset + 3),
+                            Name = $"labelCO_{coreIndex}",
+                            Size = new Size(labelWidth, 14),
+                            Text = $"C{coreIndex}",
+                            TextAlign = ContentAlignment.MiddleLeft
+                        };
+
+                        NumericUpDown nud = new NumericUpDown
+                        {
+                            Enabled = false,
+                            Location = new Point(nudX, yOffset),
+                            Margin = new Padding(0),
+                            Maximum = 999,
+                            Minimum = -999,
+                            Name = $"numericUpDownCO_{coreIndex}",
+                            Size = new Size(nudWidth, 20),
+                            Tag = coreIndex
+                        };
+
+                        ccdPanel.Controls.Add(lbl);
+                        ccdPanel.Controls.Add(nud);
+                        coControls[coreIndex] = nud;
+                    }
+
+                    yOffset += rowHeight;
+                }
+
+                flowLayoutPanelCOList.Controls.Add(ccdPanel);
+            }
+
+            flowLayoutPanelCOList.ResumeLayout();
+        }
+
+        private void CcdBulkButton_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            Tuple<int, int> action = button?.Tag as Tuple<int, int>;
+            if (action != null)
+            {
+                BulkMarginChangeHandler(action.Item1, action.Item2);
+            }
+        }
+
+        private NumericUpDown GetCOControl(int coreIndex)
+        {
+            NumericUpDown control;
+            return coControls.TryGetValue(coreIndex, out control) ? control : null;
+        }
+
+        private int GetCcdCount()
+        {
+            if (cpu.info.topology.ccds > 0)
+            {
+                return (int)cpu.info.topology.ccds;
+            }
+
+            return Math.Max(1, (int)Math.Ceiling(GetPhysicalCoreCount() / 8.0));
+        }
+
+        private int GetPhysicalCoreCount()
+        {
+            return (int)cpu.info.topology.physicalCores;
+        }
+
+        private bool IsCoreEnabled(int coreIndex)
+        {
+            int mapIndex = coreIndex / 8;
+            int coreInGroup = coreIndex % 8;
+            return mapIndex >= 0
+                && mapIndex < cpu.info.topology.coreDisableMap.Length
+                && ((~cpu.info.topology.coreDisableMap[mapIndex] >> coreInGroup) & 1) == 1;
         }
 
         private void ApplyFrequencyAllCoreSetting(int frequency)
@@ -948,7 +1227,7 @@ namespace ZenStatesDebugTool
                 if (property.Name == "CpuId" || property.Name == "PatchLevel")
                     writer.WriteValue($"{property.GetValue(cpu.systemInfo, null):X8}");
                 else if (property.Name == "SmuVersion")
-                    writer.WriteValue(cpu.systemInfo.GetSmuVersionString());
+                    writer.WriteValue(cpu.systemInfo.SmuVersionString);
                 else
                     writer.WriteValue(property.GetValue(cpu.systemInfo, null));
             }
@@ -1395,7 +1674,7 @@ namespace ZenStatesDebugTool
 
         private void ButtonPMTable_Click(object sender, EventArgs e)
         {
-            if (cpu.Status == IOModule.LibStatus.OK)
+            if (cpu.Status == IODriver.LibStatus.OK)
                 new Thread(() => new PowerTableMonitor(cpu).ShowDialog()).Start();
             else
                 HandleError("IO driver is not responding or not loaded.");
@@ -1447,12 +1726,11 @@ namespace ZenStatesDebugTool
             //if (cpu.info.family == Cpu.Family.FAMILY_19H)
             //if (cpu.smu.Rsmu.SMU_MSG_SetDldoPsmMargin != 0)
             {
-                for (var i = 0; i < cpu.info.topology.physicalCores; i++)
+                for (var i = 0; i < GetPhysicalCoreCount(); i++)
                 {
-                    int mapIndex = i < 8 ? 0 : 1;
-                    if ((~cpu.info.topology.coreDisableMap[mapIndex] >> i % 8 & 1) == 1)
+                    if (IsCoreEnabled(i))
                     {
-                        NumericUpDown control = (NumericUpDown)Controls.Find($"numericUpDownCO_{i}", true)[0];
+                        NumericUpDown control = GetCOControl(i);
                         if (control != null)
                         {
                             cpu.SetPsmMarginSingleCore(EncodeCoreMarginBitmask(i), Convert.ToInt32(control.Value));
@@ -1634,12 +1912,17 @@ namespace ZenStatesDebugTool
 
         private void BulkMarginChangeHandler(int ccd, int step = 1)
         {
-            for (var i = ccd * 8; i < ccd * 8 + 8; ++i)
+            int startCore = ccd * 8;
+            int endCore = Math.Min(startCore + 8, GetPhysicalCoreCount());
+
+            for (var i = startCore; i < endCore; ++i)
             {
-                NumericUpDown control = (NumericUpDown)Controls.Find($"numericUpDownCO_{i}", true)[0];
-                if (control != null && control.Enabled)
+                NumericUpDown control = GetCOControl(i);
+                if (control != null && control.Enabled && IsCoreEnabled(i))
                 {
-                    control.Value += step;
+                    decimal newValue = control.Value + step;
+                    newValue = Math.Max(control.Minimum, Math.Min(control.Maximum, newValue));
+                    control.Value = newValue;
                 }
             }
         }
@@ -1706,9 +1989,9 @@ namespace ZenStatesDebugTool
 
             if (cpu.smu.Rsmu.SMU_MSG_SetDldoPsmMargin != 0)
             {
-                for (var i = 0; i < 16; i++)
+                for (var i = 0; i < GetPhysicalCoreCount(); i++)
                 {
-                    NumericUpDown control = (NumericUpDown)Controls.Find($"numericUpDownCO_{i}", true)[0];
+                    NumericUpDown control = GetCOControl(i);
                     if (control != null && control.Enabled)
                     {
                         margins.Add(new Tuple<int, int>(i, Convert.ToInt32(control.Value)));
@@ -1724,6 +2007,8 @@ namespace ZenStatesDebugTool
                     {
                         foreach (var entry in margins)
                             file.WriteLine("[{0},{1}]", entry.Item1, entry.Item2);
+
+                        file.WriteLine("fmax={0}", numericUpDownFmax.Value);
 
                         textBoxResult.Text = $"Profile saved in {defaultsPath}" + Environment.NewLine + textBoxResult.Text;
                     }
@@ -1759,6 +2044,16 @@ namespace ZenStatesDebugTool
                             Int32.TryParse(values[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out int margin);
                             margins.Add(new Tuple<int, int>(index, margin));
                         }
+                        else if (line.StartsWith("fmax="))
+                        {
+                            var fmaxStr = line.Substring(5);
+                            if (decimal.TryParse(fmaxStr, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal fmaxVal))
+                                fmaxVal = Math.Max(numericUpDownFmax.Minimum, Math.Min(numericUpDownFmax.Maximum, fmaxVal));
+                            else
+                                fmaxVal = numericUpDownFmax.Value;
+                            // store temporarily in Tag for retrieval in BtnLoadCOProfile_Click
+                            numericUpDownFmax.Tag = fmaxVal;
+                        }
                     }
                 }
                 else
@@ -1776,18 +2071,22 @@ namespace ZenStatesDebugTool
 
         private void BtnLoadCOProfile_Click(object sender, EventArgs e)
         {
+            numericUpDownFmax.Tag = null;
             List<Tuple<int, int>> margins = LoadCOProfile();
 
             if (margins.Count > 0 && cpu.smu.Rsmu.SMU_MSG_SetDldoPsmMargin != 0)
             {
                 for (var i = 0; i < margins.Count; i++)
                 {
-                    NumericUpDown control = (NumericUpDown)Controls.Find($"numericUpDownCO_{margins[i].Item1}", true)[0];
+                    NumericUpDown control = GetCOControl(margins[i].Item1);
                     if (control != null && control.Enabled)
                     {
                         control.Value = margins[i].Item2;
                     }
                 }
+
+                if (numericUpDownFmax.Tag is decimal savedFmax)
+                    numericUpDownFmax.Value = savedFmax;
 
                 textBoxResult.Text = $"Saved CO profile loaded from {defaultsPath}" + Environment.NewLine + textBoxResult.Text;
             }
@@ -2068,6 +2367,49 @@ namespace ZenStatesDebugTool
                 HandleError("Invalid address format!");
                 return;
             }
+        }
+
+        private void ButtonRefreshCS_Click(object sender, EventArgs e)
+        {
+            InitCS(showStatus: true);
+        }
+
+        private void ButtonApplyCS_Click(object sender, EventArgs e)
+        {
+            var errorMessages = new List<string>();
+
+            if (cpu.SetCurveShaperMargin(marginHigh: (int)cs_min_high.Value, marginMedium: (int)cs_min_med.Value, marginLow: (int)cs_min_low.Value, 0) != SMU.Status.OK)
+            {
+                errorMessages.Add("Failed to set Curve Shaper margins for frequency tier 0 (min).");
+            }
+            if (cpu.SetCurveShaperMargin(marginHigh: (int)cs_low_high.Value, marginMedium: (int)cs_low_med.Value, marginLow: (int)cs_low_low.Value, 1) != SMU.Status.OK)
+            {
+                errorMessages.Add("Failed to set Curve Shaper margins for frequency tier 1 (low).");
+            }
+            if (cpu.SetCurveShaperMargin(marginHigh: (int)cs_med_high.Value, marginMedium: (int)cs_med_med.Value, marginLow: (int)cs_med_low.Value, 2) != SMU.Status.OK)
+            {
+                errorMessages.Add("Failed to set Curve Shaper margins for frequency tier 2 (medium).");
+            }
+            if (cpu.SetCurveShaperMargin(marginHigh: (int)cs_high_high.Value, marginMedium: (int)cs_high_med.Value, marginLow: (int)cs_high_low.Value, 3) != SMU.Status.OK)
+            {
+                errorMessages.Add("Failed to set Curve Shaper margins for frequency tier 3 (high).");
+            }
+            if (cpu.SetCurveShaperMargin(marginHigh: (int)cs_max_high.Value, marginMedium: (int)cs_max_med.Value, marginLow: (int)cs_max_low.Value, 4) != SMU.Status.OK)
+            {
+                errorMessages.Add("Failed to set Curve Shaper margins for frequency tier 4 (max).");
+            }
+
+            if (errorMessages.Count == 0)
+            {
+                SetStatusText("Curve Shaper margins applied successfully.");
+            }
+            else
+            {
+                textBoxResult.Text = string.Join(Environment.NewLine, errorMessages) + Environment.NewLine + textBoxResult.Text;
+                SetStatusText("One or more errors occurred while applying Curve Shaper margins.");
+            }
+
+            InitCS();
         }
     }
 }

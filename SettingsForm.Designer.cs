@@ -169,50 +169,43 @@ namespace ZenStatesDebugTool
             this.buttonCPUIDScan = new System.Windows.Forms.Button();
             this.tabPagePbo = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownCO_8 = new System.Windows.Forms.NumericUpDown();
-            this.buttonApplyCO = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelCcdActions = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelCOList = new System.Windows.Forms.FlowLayoutPanel();
+            this.label51 = new System.Windows.Forms.Label();
+            this.numericUpDownFmax = new System.Windows.Forms.NumericUpDown();
+            this.buttonApplyFMax = new System.Windows.Forms.Button();
+            this.flowLayoutPanelPboActions = new System.Windows.Forms.TableLayoutPanel();
             this.buttonGetCO = new System.Windows.Forms.Button();
-            this.numericUpDownCO_0 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_10 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_11 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_12 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_13 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_14 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCO_15 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnSaveCOProfile = new System.Windows.Forms.Button();
             this.btnLoadCOProfile = new System.Windows.Forms.Button();
             this.checkBoxApplyCOStartup = new System.Windows.Forms.CheckBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.buttonApplyFMax = new System.Windows.Forms.Button();
-            this.numericUpDownFmax = new System.Windows.Forms.NumericUpDown();
+            this.tabPageCS = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.cs_min_high = new System.Windows.Forms.NumericUpDown();
+            this.cs_min_med = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cs_min_low = new System.Windows.Forms.NumericUpDown();
+            this.cs_low_low = new System.Windows.Forms.NumericUpDown();
+            this.cs_low_med = new System.Windows.Forms.NumericUpDown();
+            this.cs_low_high = new System.Windows.Forms.NumericUpDown();
+            this.cs_med_low = new System.Windows.Forms.NumericUpDown();
+            this.cs_med_med = new System.Windows.Forms.NumericUpDown();
+            this.cs_med_high = new System.Windows.Forms.NumericUpDown();
+            this.cs_high_low = new System.Windows.Forms.NumericUpDown();
+            this.cs_high_med = new System.Windows.Forms.NumericUpDown();
+            this.cs_high_high = new System.Windows.Forms.NumericUpDown();
+            this.cs_max_low = new System.Windows.Forms.NumericUpDown();
+            this.cs_max_med = new System.Windows.Forms.NumericUpDown();
+            this.cs_max_high = new System.Windows.Forms.NumericUpDown();
+            this.buttonApplyCS = new System.Windows.Forms.Button();
+            this.buttonRefreshCS = new System.Windows.Forms.Button();
             this.tabPageWmi = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label49 = new System.Windows.Forms.Label();
@@ -260,6 +253,7 @@ namespace ZenStatesDebugTool
             this.packageTypeInfoLabel = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.configInfoLabel = new System.Windows.Forms.Label();
+            this.buttonApplyCO = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -287,23 +281,25 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel10.SuspendLayout();
             this.tabPagePbo.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFmax)).BeginInit();
+            this.flowLayoutPanelPboActions.SuspendLayout();
+            this.tabPageCS.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_high)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_med)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_med)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_high)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_med)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_high)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_med)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_high)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_med)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_high)).BeginInit();
             this.tabPageWmi.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tabPagePstates.SuspendLayout();
@@ -512,7 +508,7 @@ namespace ZenStatesDebugTool
             this.labelStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 410);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(652, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(676, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
@@ -535,7 +531,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel2.Controls.Add(this.buttonPMTable, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonDefaults, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.buttonApply, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(244, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(268, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(4, 5, 5, 5);
             this.tableLayoutPanel2.RowCount = 5;
@@ -608,6 +604,7 @@ namespace ZenStatesDebugTool
             this.tabControl1.Controls.Add(this.tabPageMsr);
             this.tabControl1.Controls.Add(this.tabPageCPUID);
             this.tabControl1.Controls.Add(this.tabPagePbo);
+            this.tabControl1.Controls.Add(this.tabPageCS);
             this.tabControl1.Controls.Add(this.tabPageWmi);
             this.tabControl1.Controls.Add(this.tabPagePstates);
             this.tabControl1.Controls.Add(this.tabPageInfo);
@@ -616,7 +613,7 @@ namespace ZenStatesDebugTool
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(345, 400);
+            this.tabControl1.Size = new System.Drawing.Size(369, 400);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 2;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
@@ -628,7 +625,7 @@ namespace ZenStatesDebugTool
             this.tabPageCPU.Location = new System.Drawing.Point(4, 40);
             this.tabPageCPU.Name = "tabPageCPU";
             this.tabPageCPU.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCPU.Size = new System.Drawing.Size(337, 356);
+            this.tabPageCPU.Size = new System.Drawing.Size(361, 356);
             this.tabPageCPU.TabIndex = 4;
             this.tabPageCPU.Text = "CPU";
             this.tabPageCPU.UseVisualStyleBackColor = true;
@@ -1181,13 +1178,13 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(331, 159);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(355, 159);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // buttonApplyPROCHOT
             // 
             this.buttonApplyPROCHOT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonApplyPROCHOT.Location = new System.Drawing.Point(247, 128);
+            this.buttonApplyPROCHOT.Location = new System.Drawing.Point(271, 128);
             this.buttonApplyPROCHOT.Name = "buttonApplyPROCHOT";
             this.buttonApplyPROCHOT.Size = new System.Drawing.Size(76, 23);
             this.buttonApplyPROCHOT.TabIndex = 12;
@@ -1198,7 +1195,7 @@ namespace ZenStatesDebugTool
             // buttonApplySC
             // 
             this.buttonApplySC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonApplySC.Location = new System.Drawing.Point(247, 88);
+            this.buttonApplySC.Location = new System.Drawing.Point(271, 88);
             this.buttonApplySC.Name = "buttonApplySC";
             this.buttonApplySC.Size = new System.Drawing.Size(76, 24);
             this.buttonApplySC.TabIndex = 5;
@@ -1209,7 +1206,7 @@ namespace ZenStatesDebugTool
             // buttonApplyAC
             // 
             this.buttonApplyAC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonApplyAC.Location = new System.Drawing.Point(247, 28);
+            this.buttonApplyAC.Location = new System.Drawing.Point(271, 28);
             this.buttonApplyAC.Name = "buttonApplyAC";
             this.buttonApplyAC.Size = new System.Drawing.Size(76, 24);
             this.buttonApplyAC.TabIndex = 2;
@@ -1224,7 +1221,7 @@ namespace ZenStatesDebugTool
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Location = new System.Drawing.Point(3, 5);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(320, 20);
+            this.label14.Size = new System.Drawing.Size(344, 20);
             this.label14.TabIndex = 6;
             this.label14.Text = "All Core Frequency";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1236,7 +1233,7 @@ namespace ZenStatesDebugTool
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Location = new System.Drawing.Point(3, 65);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(320, 20);
+            this.label16.Size = new System.Drawing.Size(344, 20);
             this.label16.TabIndex = 7;
             this.label16.Text = "Single Core Frequency";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1278,7 +1275,7 @@ namespace ZenStatesDebugTool
             this.checkBoxPROCHOT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxPROCHOT.Location = new System.Drawing.Point(3, 128);
             this.checkBoxPROCHOT.Name = "checkBoxPROCHOT";
-            this.checkBoxPROCHOT.Size = new System.Drawing.Size(238, 23);
+            this.checkBoxPROCHOT.Size = new System.Drawing.Size(262, 23);
             this.checkBoxPROCHOT.TabIndex = 11;
             this.checkBoxPROCHOT.Text = "PROCHOT";
             this.checkBoxPROCHOT.UseVisualStyleBackColor = true;
@@ -1290,7 +1287,7 @@ namespace ZenStatesDebugTool
             this.tabPageSmu.Location = new System.Drawing.Point(4, 40);
             this.tabPageSmu.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageSmu.Name = "tabPageSmu";
-            this.tabPageSmu.Size = new System.Drawing.Size(337, 356);
+            this.tabPageSmu.Size = new System.Drawing.Size(361, 356);
             this.tabPageSmu.TabIndex = 0;
             this.tabPageSmu.Text = "SMU";
             this.tabPageSmu.UseVisualStyleBackColor = true;
@@ -1306,7 +1303,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(337, 0);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(361, 0);
             this.tableLayoutPanel7.TabIndex = 4;
             // 
             // tableLayoutPanel6
@@ -1323,7 +1320,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(337, 185);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(361, 185);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // tabPagePci
@@ -1332,7 +1329,7 @@ namespace ZenStatesDebugTool
             this.tabPagePci.Location = new System.Drawing.Point(4, 40);
             this.tabPagePci.Name = "tabPagePci";
             this.tabPagePci.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePci.Size = new System.Drawing.Size(337, 356);
+            this.tabPagePci.Size = new System.Drawing.Size(361, 356);
             this.tabPagePci.TabIndex = 1;
             this.tabPagePci.Text = "PCI";
             this.tabPagePci.UseVisualStyleBackColor = true;
@@ -1378,13 +1375,13 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(331, 253);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(355, 253);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // buttonPciWrite
             // 
             this.buttonPciWrite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPciWrite.Location = new System.Drawing.Point(248, 39);
+            this.buttonPciWrite.Location = new System.Drawing.Point(272, 39);
             this.buttonPciWrite.Name = "buttonPciWrite";
             this.buttonPciWrite.Size = new System.Drawing.Size(75, 25);
             this.buttonPciWrite.TabIndex = 5;
@@ -1420,7 +1417,7 @@ namespace ZenStatesDebugTool
             // buttonPciRead
             // 
             this.buttonPciRead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPciRead.Location = new System.Drawing.Point(248, 8);
+            this.buttonPciRead.Location = new System.Drawing.Point(272, 8);
             this.buttonPciRead.Name = "buttonPciRead";
             this.buttonPciRead.Size = new System.Drawing.Size(75, 25);
             this.buttonPciRead.TabIndex = 2;
@@ -1499,7 +1496,7 @@ namespace ZenStatesDebugTool
             // buttonPciScan
             // 
             this.buttonPciScan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPciScan.Location = new System.Drawing.Point(248, 90);
+            this.buttonPciScan.Location = new System.Drawing.Point(272, 90);
             this.buttonPciScan.Name = "buttonPciScan";
             this.buttonPciScan.Size = new System.Drawing.Size(75, 25);
             this.buttonPciScan.TabIndex = 10;
@@ -1509,7 +1506,7 @@ namespace ZenStatesDebugTool
             // 
             // ButtonPCIRangeMonitor
             // 
-            this.ButtonPCIRangeMonitor.Location = new System.Drawing.Point(248, 121);
+            this.ButtonPCIRangeMonitor.Location = new System.Drawing.Point(272, 121);
             this.ButtonPCIRangeMonitor.Name = "ButtonPCIRangeMonitor";
             this.ButtonPCIRangeMonitor.Size = new System.Drawing.Size(75, 23);
             this.ButtonPCIRangeMonitor.TabIndex = 11;
@@ -1556,7 +1553,7 @@ namespace ZenStatesDebugTool
             this.textBoxDumpStartAddress.Name = "textBoxDumpStartAddress";
             this.textBoxDumpStartAddress.Size = new System.Drawing.Size(94, 20);
             this.textBoxDumpStartAddress.TabIndex = 15;
-            this.textBoxDumpStartAddress.Text = "0xFE000000";
+            this.textBoxDumpStartAddress.Text = "0xA200000";
             // 
             // textBoxDumpEndAddress
             // 
@@ -1564,7 +1561,7 @@ namespace ZenStatesDebugTool
             this.textBoxDumpEndAddress.Name = "textBoxDumpEndAddress";
             this.textBoxDumpEndAddress.Size = new System.Drawing.Size(94, 20);
             this.textBoxDumpEndAddress.TabIndex = 16;
-            this.textBoxDumpEndAddress.Text = "0xFFFFFFFF";
+            this.textBoxDumpEndAddress.Text = "0xA2FFFFF";
             // 
             // textBoxDumpName
             // 
@@ -1577,7 +1574,7 @@ namespace ZenStatesDebugTool
             // buttonDump
             // 
             this.buttonDump.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDump.Location = new System.Drawing.Point(248, 170);
+            this.buttonDump.Location = new System.Drawing.Point(272, 170);
             this.buttonDump.Name = "buttonDump";
             this.buttonDump.Size = new System.Drawing.Size(75, 23);
             this.buttonDump.TabIndex = 18;
@@ -1591,7 +1588,7 @@ namespace ZenStatesDebugTool
             this.tabPageMsr.Location = new System.Drawing.Point(4, 40);
             this.tabPageMsr.Name = "tabPageMsr";
             this.tabPageMsr.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMsr.Size = new System.Drawing.Size(337, 356);
+            this.tabPageMsr.Size = new System.Drawing.Size(361, 356);
             this.tabPageMsr.TabIndex = 5;
             this.tabPageMsr.Text = "MSR";
             this.tabPageMsr.UseVisualStyleBackColor = true;
@@ -1628,13 +1625,13 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(331, 178);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(355, 178);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // buttonMsrWrite
             // 
             this.buttonMsrWrite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonMsrWrite.Location = new System.Drawing.Point(247, 66);
+            this.buttonMsrWrite.Location = new System.Drawing.Point(271, 66);
             this.buttonMsrWrite.Name = "buttonMsrWrite";
             this.buttonMsrWrite.Size = new System.Drawing.Size(76, 25);
             this.buttonMsrWrite.TabIndex = 5;
@@ -1669,7 +1666,7 @@ namespace ZenStatesDebugTool
             // buttonMsrRead
             // 
             this.buttonMsrRead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonMsrRead.Location = new System.Drawing.Point(247, 8);
+            this.buttonMsrRead.Location = new System.Drawing.Point(271, 8);
             this.buttonMsrRead.Name = "buttonMsrRead";
             this.buttonMsrRead.Size = new System.Drawing.Size(76, 25);
             this.buttonMsrRead.TabIndex = 2;
@@ -1747,7 +1744,7 @@ namespace ZenStatesDebugTool
             // buttonMsrScan
             // 
             this.buttonMsrScan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonMsrScan.Location = new System.Drawing.Point(247, 117);
+            this.buttonMsrScan.Location = new System.Drawing.Point(271, 117);
             this.buttonMsrScan.Name = "buttonMsrScan";
             this.buttonMsrScan.Size = new System.Drawing.Size(76, 25);
             this.buttonMsrScan.TabIndex = 10;
@@ -1785,7 +1782,7 @@ namespace ZenStatesDebugTool
             this.tabPageCPUID.Location = new System.Drawing.Point(4, 40);
             this.tabPageCPUID.Name = "tabPageCPUID";
             this.tabPageCPUID.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCPUID.Size = new System.Drawing.Size(337, 356);
+            this.tabPageCPUID.Size = new System.Drawing.Size(361, 356);
             this.tabPageCPUID.TabIndex = 6;
             this.tabPageCPUID.Text = "CPUID";
             this.tabPageCPUID.UseVisualStyleBackColor = true;
@@ -1875,7 +1872,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(331, 154);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(355, 154);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // label21
@@ -1904,7 +1901,7 @@ namespace ZenStatesDebugTool
             // buttonCPUIDRead
             // 
             this.buttonCPUIDRead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCPUIDRead.Location = new System.Drawing.Point(246, 8);
+            this.buttonCPUIDRead.Location = new System.Drawing.Point(270, 8);
             this.buttonCPUIDRead.Name = "buttonCPUIDRead";
             this.buttonCPUIDRead.Size = new System.Drawing.Size(77, 25);
             this.buttonCPUIDRead.TabIndex = 2;
@@ -2010,7 +2007,7 @@ namespace ZenStatesDebugTool
             // 
             // buttonCPUIDScan
             // 
-            this.buttonCPUIDScan.Location = new System.Drawing.Point(246, 39);
+            this.buttonCPUIDScan.Location = new System.Drawing.Point(270, 39);
             this.buttonCPUIDScan.Name = "buttonCPUIDScan";
             this.buttonCPUIDScan.Size = new System.Drawing.Size(77, 23);
             this.buttonCPUIDScan.TabIndex = 10;
@@ -2023,656 +2020,143 @@ namespace ZenStatesDebugTool
             this.tabPagePbo.Controls.Add(this.tableLayoutPanel12);
             this.tabPagePbo.Location = new System.Drawing.Point(4, 40);
             this.tabPagePbo.Name = "tabPagePbo";
-            this.tabPagePbo.Size = new System.Drawing.Size(337, 356);
+            this.tabPagePbo.Size = new System.Drawing.Size(361, 356);
             this.tabPagePbo.TabIndex = 7;
             this.tabPagePbo.Text = "PBO";
             this.tabPagePbo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel12
             // 
-            this.tableLayoutPanel12.ColumnCount = 6;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_8, 3, 1);
-            this.tableLayoutPanel12.Controls.Add(this.buttonApplyCO, 5, 1);
-            this.tableLayoutPanel12.Controls.Add(this.label31, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.label32, 0, 2);
-            this.tableLayoutPanel12.Controls.Add(this.label33, 0, 3);
-            this.tableLayoutPanel12.Controls.Add(this.label34, 0, 4);
-            this.tableLayoutPanel12.Controls.Add(this.label35, 0, 5);
-            this.tableLayoutPanel12.Controls.Add(this.label36, 0, 6);
-            this.tableLayoutPanel12.Controls.Add(this.label37, 0, 7);
-            this.tableLayoutPanel12.Controls.Add(this.label38, 0, 8);
-            this.tableLayoutPanel12.Controls.Add(this.label39, 2, 1);
-            this.tableLayoutPanel12.Controls.Add(this.label40, 2, 2);
-            this.tableLayoutPanel12.Controls.Add(this.label41, 2, 3);
-            this.tableLayoutPanel12.Controls.Add(this.label42, 2, 4);
-            this.tableLayoutPanel12.Controls.Add(this.label43, 2, 5);
-            this.tableLayoutPanel12.Controls.Add(this.label44, 2, 6);
-            this.tableLayoutPanel12.Controls.Add(this.label45, 2, 7);
-            this.tableLayoutPanel12.Controls.Add(this.label46, 2, 8);
-            this.tableLayoutPanel12.Controls.Add(this.buttonGetCO, 5, 2);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_0, 1, 1);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_1, 1, 2);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_2, 1, 3);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_3, 1, 4);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_4, 1, 5);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_5, 1, 6);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_6, 1, 7);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_7, 1, 8);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_9, 3, 2);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_10, 3, 3);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_11, 3, 4);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_12, 3, 5);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_13, 3, 6);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_14, 3, 7);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownCO_15, 3, 8);
-            this.tableLayoutPanel12.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.button2, 1, 9);
-            this.tableLayoutPanel12.Controls.Add(this.button3, 3, 0);
-            this.tableLayoutPanel12.Controls.Add(this.button4, 3, 9);
-            this.tableLayoutPanel12.Controls.Add(this.btnSaveCOProfile, 5, 3);
-            this.tableLayoutPanel12.Controls.Add(this.btnLoadCOProfile, 5, 4);
-            this.tableLayoutPanel12.Controls.Add(this.checkBoxApplyCOStartup, 0, 10);
-            this.tableLayoutPanel12.Controls.Add(this.label51, 0, 12);
-            this.tableLayoutPanel12.Controls.Add(this.buttonApplyFMax, 5, 12);
-            this.tableLayoutPanel12.Controls.Add(this.numericUpDownFmax, 1, 12);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel12.Controls.Add(this.flowLayoutPanelCcdActions, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.flowLayoutPanelCOList, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.label51, 0, 2);
+            this.tableLayoutPanel12.Controls.Add(this.numericUpDownFmax, 1, 2);
+            this.tableLayoutPanel12.Controls.Add(this.buttonApplyFMax, 2, 2);
+            this.tableLayoutPanel12.Controls.Add(this.flowLayoutPanelPboActions, 0, 4);
+            this.tableLayoutPanel12.Controls.Add(this.checkBoxApplyCOStartup, 0, 3);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 14;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel12.Padding = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel12.RowCount = 5;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(331, 350);
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(361, 356);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
-            // numericUpDownCO_8
+            // flowLayoutPanelCcdActions
             // 
-            this.numericUpDownCO_8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_8.Enabled = false;
-            this.numericUpDownCO_8.Location = new System.Drawing.Point(173, 32);
-            this.numericUpDownCO_8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_8.Maximum = new decimal(new int[] {
-            999,
+            this.flowLayoutPanelCcdActions.AutoSize = true;
+            this.flowLayoutPanelCcdActions.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel12.SetColumnSpan(this.flowLayoutPanelCcdActions, 3);
+            this.flowLayoutPanelCcdActions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelCcdActions.Location = new System.Drawing.Point(6, 6);
+            this.flowLayoutPanelCcdActions.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
+            this.flowLayoutPanelCcdActions.Name = "flowLayoutPanelCcdActions";
+            this.flowLayoutPanelCcdActions.Size = new System.Drawing.Size(349, 1);
+            this.flowLayoutPanelCcdActions.TabIndex = 1;
+            this.flowLayoutPanelCcdActions.WrapContents = false;
+            // 
+            // flowLayoutPanelCOList
+            // 
+            this.flowLayoutPanelCOList.AutoScroll = true;
+            this.tableLayoutPanel12.SetColumnSpan(this.flowLayoutPanelCOList, 3);
+            this.flowLayoutPanelCOList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelCOList.Location = new System.Drawing.Point(6, 8);
+            this.flowLayoutPanelCOList.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.flowLayoutPanelCOList.Name = "flowLayoutPanelCOList";
+            this.flowLayoutPanelCOList.Size = new System.Drawing.Size(349, 267);
+            this.flowLayoutPanelCOList.TabIndex = 2;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label51.Location = new System.Drawing.Point(6, 279);
+            this.label51.Margin = new System.Windows.Forms.Padding(3, 4, 6, 3);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(33, 24);
+            this.label51.TabIndex = 56;
+            this.label51.Text = "FMax";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDownFmax
+            // 
+            this.numericUpDownFmax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownFmax.Increment = new decimal(new int[] {
+            25,
             0,
             0,
             0});
-            this.numericUpDownCO_8.Minimum = new decimal(new int[] {
-            999,
+            this.numericUpDownFmax.Location = new System.Drawing.Point(48, 279);
+            this.numericUpDownFmax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.numericUpDownFmax.Maximum = new decimal(new int[] {
+            9000,
             0,
             0,
-            -2147483648});
-            this.numericUpDownCO_8.Name = "numericUpDownCO_8";
-            this.numericUpDownCO_8.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_8.TabIndex = 41;
+            0});
+            this.numericUpDownFmax.Name = "numericUpDownFmax";
+            this.numericUpDownFmax.Size = new System.Drawing.Size(219, 20);
+            this.numericUpDownFmax.TabIndex = 59;
             // 
-            // buttonApplyCO
+            // buttonApplyFMax
             // 
-            this.buttonApplyCO.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonApplyCO.Location = new System.Drawing.Point(243, 31);
-            this.buttonApplyCO.Name = "buttonApplyCO";
-            this.buttonApplyCO.Size = new System.Drawing.Size(85, 22);
-            this.buttonApplyCO.TabIndex = 5;
-            this.buttonApplyCO.Text = "Apply";
-            this.buttonApplyCO.UseVisualStyleBackColor = true;
-            this.buttonApplyCO.Click += new System.EventHandler(this.ButtonApplyCO_Click);
+            this.buttonApplyFMax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonApplyFMax.Location = new System.Drawing.Point(273, 279);
+            this.buttonApplyFMax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.buttonApplyFMax.Name = "buttonApplyFMax";
+            this.buttonApplyFMax.Size = new System.Drawing.Size(82, 24);
+            this.buttonApplyFMax.TabIndex = 58;
+            this.buttonApplyFMax.Text = "Apply";
+            this.buttonApplyFMax.UseVisualStyleBackColor = true;
+            this.buttonApplyFMax.Click += new System.EventHandler(this.ButtonApplyFMax_Click);
             // 
-            // label31
+            // flowLayoutPanelPboActions
             // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Location = new System.Drawing.Point(3, 28);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(54, 28);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "Core 0";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Location = new System.Drawing.Point(3, 56);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(54, 28);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "Core 1";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Location = new System.Drawing.Point(3, 84);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(54, 28);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "Core 2";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label34.Location = new System.Drawing.Point(3, 112);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(54, 28);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "Core 3";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label35.Location = new System.Drawing.Point(3, 140);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(54, 28);
-            this.label35.TabIndex = 4;
-            this.label35.Text = "Core 4";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Location = new System.Drawing.Point(3, 168);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(54, 28);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Core 5";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label37.Location = new System.Drawing.Point(3, 196);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(54, 28);
-            this.label37.TabIndex = 6;
-            this.label37.Text = "Core 6";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label38.Location = new System.Drawing.Point(3, 224);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(54, 28);
-            this.label38.TabIndex = 7;
-            this.label38.Text = "Core 7";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label39.Location = new System.Drawing.Point(113, 28);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(54, 28);
-            this.label39.TabIndex = 8;
-            this.label39.Text = "Core 8";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label40.Location = new System.Drawing.Point(113, 56);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(54, 28);
-            this.label40.TabIndex = 9;
-            this.label40.Text = "Core 9";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label41.Location = new System.Drawing.Point(113, 84);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(54, 28);
-            this.label41.TabIndex = 10;
-            this.label41.Text = "Core 10";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label42.Location = new System.Drawing.Point(113, 112);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(54, 28);
-            this.label42.TabIndex = 11;
-            this.label42.Text = "Core 11";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label43.Location = new System.Drawing.Point(113, 140);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(54, 28);
-            this.label43.TabIndex = 12;
-            this.label43.Text = "Core 12";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label44.Location = new System.Drawing.Point(113, 168);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(54, 28);
-            this.label44.TabIndex = 13;
-            this.label44.Text = "Core 13";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label45.Location = new System.Drawing.Point(113, 196);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(54, 28);
-            this.label45.TabIndex = 14;
-            this.label45.Text = "Core 14";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label46.Location = new System.Drawing.Point(113, 224);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(54, 28);
-            this.label46.TabIndex = 15;
-            this.label46.Text = "Core 15";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.flowLayoutPanelPboActions.ColumnCount = 3;
+            this.tableLayoutPanel12.SetColumnSpan(this.flowLayoutPanelPboActions, 3);
+            this.flowLayoutPanelPboActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.flowLayoutPanelPboActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.flowLayoutPanelPboActions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.flowLayoutPanelPboActions.Controls.Add(this.buttonGetCO, 0, 0);
+            this.flowLayoutPanelPboActions.Controls.Add(this.btnSaveCOProfile, 1, 0);
+            this.flowLayoutPanelPboActions.Controls.Add(this.btnLoadCOProfile, 2, 0);
+            this.flowLayoutPanelPboActions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelPboActions.Location = new System.Drawing.Point(3, 328);
+            this.flowLayoutPanelPboActions.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanelPboActions.Name = "flowLayoutPanelPboActions";
+            this.flowLayoutPanelPboActions.RowCount = 1;
+            this.flowLayoutPanelPboActions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.flowLayoutPanelPboActions.Size = new System.Drawing.Size(355, 25);
+            this.flowLayoutPanelPboActions.TabIndex = 0;
             // 
             // buttonGetCO
             // 
             this.buttonGetCO.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonGetCO.Location = new System.Drawing.Point(243, 59);
+            this.buttonGetCO.Location = new System.Drawing.Point(0, 0);
+            this.buttonGetCO.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.buttonGetCO.Name = "buttonGetCO";
-            this.buttonGetCO.Size = new System.Drawing.Size(85, 22);
+            this.buttonGetCO.Size = new System.Drawing.Size(117, 25);
             this.buttonGetCO.TabIndex = 32;
             this.buttonGetCO.Text = "Refresh";
             this.buttonGetCO.UseVisualStyleBackColor = true;
             this.buttonGetCO.Click += new System.EventHandler(this.buttonGetCO_Click);
             // 
-            // numericUpDownCO_0
-            // 
-            this.numericUpDownCO_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_0.Enabled = false;
-            this.numericUpDownCO_0.Location = new System.Drawing.Point(63, 32);
-            this.numericUpDownCO_0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_0.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_0.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_0.Name = "numericUpDownCO_0";
-            this.numericUpDownCO_0.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_0.TabIndex = 33;
-            // 
-            // numericUpDownCO_1
-            // 
-            this.numericUpDownCO_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_1.Enabled = false;
-            this.numericUpDownCO_1.Location = new System.Drawing.Point(63, 60);
-            this.numericUpDownCO_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_1.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_1.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_1.Name = "numericUpDownCO_1";
-            this.numericUpDownCO_1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_1.TabIndex = 34;
-            // 
-            // numericUpDownCO_2
-            // 
-            this.numericUpDownCO_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_2.Enabled = false;
-            this.numericUpDownCO_2.Location = new System.Drawing.Point(63, 88);
-            this.numericUpDownCO_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_2.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_2.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_2.Name = "numericUpDownCO_2";
-            this.numericUpDownCO_2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_2.TabIndex = 35;
-            // 
-            // numericUpDownCO_3
-            // 
-            this.numericUpDownCO_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_3.Enabled = false;
-            this.numericUpDownCO_3.Location = new System.Drawing.Point(63, 116);
-            this.numericUpDownCO_3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_3.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_3.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_3.Name = "numericUpDownCO_3";
-            this.numericUpDownCO_3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_3.TabIndex = 36;
-            // 
-            // numericUpDownCO_4
-            // 
-            this.numericUpDownCO_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_4.Enabled = false;
-            this.numericUpDownCO_4.Location = new System.Drawing.Point(63, 144);
-            this.numericUpDownCO_4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_4.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_4.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_4.Name = "numericUpDownCO_4";
-            this.numericUpDownCO_4.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_4.TabIndex = 37;
-            // 
-            // numericUpDownCO_5
-            // 
-            this.numericUpDownCO_5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_5.Enabled = false;
-            this.numericUpDownCO_5.Location = new System.Drawing.Point(63, 172);
-            this.numericUpDownCO_5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_5.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_5.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_5.Name = "numericUpDownCO_5";
-            this.numericUpDownCO_5.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_5.TabIndex = 38;
-            // 
-            // numericUpDownCO_6
-            // 
-            this.numericUpDownCO_6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_6.Enabled = false;
-            this.numericUpDownCO_6.Location = new System.Drawing.Point(63, 200);
-            this.numericUpDownCO_6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_6.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_6.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_6.Name = "numericUpDownCO_6";
-            this.numericUpDownCO_6.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_6.TabIndex = 39;
-            // 
-            // numericUpDownCO_7
-            // 
-            this.numericUpDownCO_7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_7.Enabled = false;
-            this.numericUpDownCO_7.Location = new System.Drawing.Point(63, 228);
-            this.numericUpDownCO_7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_7.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_7.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_7.Name = "numericUpDownCO_7";
-            this.numericUpDownCO_7.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_7.TabIndex = 40;
-            // 
-            // numericUpDownCO_9
-            // 
-            this.numericUpDownCO_9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_9.Enabled = false;
-            this.numericUpDownCO_9.Location = new System.Drawing.Point(173, 60);
-            this.numericUpDownCO_9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_9.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_9.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_9.Name = "numericUpDownCO_9";
-            this.numericUpDownCO_9.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_9.TabIndex = 42;
-            // 
-            // numericUpDownCO_10
-            // 
-            this.numericUpDownCO_10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_10.Enabled = false;
-            this.numericUpDownCO_10.Location = new System.Drawing.Point(173, 88);
-            this.numericUpDownCO_10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_10.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_10.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_10.Name = "numericUpDownCO_10";
-            this.numericUpDownCO_10.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_10.TabIndex = 43;
-            // 
-            // numericUpDownCO_11
-            // 
-            this.numericUpDownCO_11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_11.Enabled = false;
-            this.numericUpDownCO_11.Location = new System.Drawing.Point(173, 116);
-            this.numericUpDownCO_11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_11.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_11.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_11.Name = "numericUpDownCO_11";
-            this.numericUpDownCO_11.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_11.TabIndex = 44;
-            // 
-            // numericUpDownCO_12
-            // 
-            this.numericUpDownCO_12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_12.Enabled = false;
-            this.numericUpDownCO_12.Location = new System.Drawing.Point(173, 144);
-            this.numericUpDownCO_12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_12.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_12.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_12.Name = "numericUpDownCO_12";
-            this.numericUpDownCO_12.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_12.TabIndex = 45;
-            // 
-            // numericUpDownCO_13
-            // 
-            this.numericUpDownCO_13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_13.Enabled = false;
-            this.numericUpDownCO_13.Location = new System.Drawing.Point(173, 172);
-            this.numericUpDownCO_13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_13.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_13.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_13.Name = "numericUpDownCO_13";
-            this.numericUpDownCO_13.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_13.TabIndex = 46;
-            // 
-            // numericUpDownCO_14
-            // 
-            this.numericUpDownCO_14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_14.Enabled = false;
-            this.numericUpDownCO_14.Location = new System.Drawing.Point(173, 200);
-            this.numericUpDownCO_14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_14.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_14.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_14.Name = "numericUpDownCO_14";
-            this.numericUpDownCO_14.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_14.TabIndex = 47;
-            // 
-            // numericUpDownCO_15
-            // 
-            this.numericUpDownCO_15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownCO_15.Enabled = false;
-            this.numericUpDownCO_15.Location = new System.Drawing.Point(173, 228);
-            this.numericUpDownCO_15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownCO_15.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCO_15.Minimum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDownCO_15.Name = "numericUpDownCO_15";
-            this.numericUpDownCO_15.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownCO_15.TabIndex = 48;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(63, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 22);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button_ccd0_inc_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(63, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 22);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button_ccd0_dec_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(173, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 22);
-            this.button3.TabIndex = 51;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button_ccd1_inc_Click);
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(173, 255);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 22);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "-";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button_ccd1_dec_Click);
-            // 
             // btnSaveCOProfile
             // 
             this.btnSaveCOProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSaveCOProfile.Location = new System.Drawing.Point(243, 87);
+            this.btnSaveCOProfile.Location = new System.Drawing.Point(119, 0);
+            this.btnSaveCOProfile.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.btnSaveCOProfile.Name = "btnSaveCOProfile";
-            this.btnSaveCOProfile.Size = new System.Drawing.Size(85, 22);
+            this.btnSaveCOProfile.Size = new System.Drawing.Size(116, 25);
             this.btnSaveCOProfile.TabIndex = 53;
             this.btnSaveCOProfile.Text = "Save";
             this.btnSaveCOProfile.UseVisualStyleBackColor = true;
@@ -2681,9 +2165,10 @@ namespace ZenStatesDebugTool
             // btnLoadCOProfile
             // 
             this.btnLoadCOProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoadCOProfile.Location = new System.Drawing.Point(243, 115);
+            this.btnLoadCOProfile.Location = new System.Drawing.Point(237, 0);
+            this.btnLoadCOProfile.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.btnLoadCOProfile.Name = "btnLoadCOProfile";
-            this.btnLoadCOProfile.Size = new System.Drawing.Size(85, 22);
+            this.btnLoadCOProfile.Size = new System.Drawing.Size(118, 25);
             this.btnLoadCOProfile.TabIndex = 54;
             this.btnLoadCOProfile.Text = "Load";
             this.btnLoadCOProfile.UseVisualStyleBackColor = true;
@@ -2692,64 +2177,447 @@ namespace ZenStatesDebugTool
             // checkBoxApplyCOStartup
             // 
             this.checkBoxApplyCOStartup.AutoSize = true;
-            this.tableLayoutPanel12.SetColumnSpan(this.checkBoxApplyCOStartup, 4);
+            this.tableLayoutPanel12.SetColumnSpan(this.checkBoxApplyCOStartup, 3);
             this.checkBoxApplyCOStartup.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checkBoxApplyCOStartup.Location = new System.Drawing.Point(3, 283);
+            this.checkBoxApplyCOStartup.Location = new System.Drawing.Point(6, 308);
+            this.checkBoxApplyCOStartup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.checkBoxApplyCOStartup.Name = "checkBoxApplyCOStartup";
-            this.checkBoxApplyCOStartup.Size = new System.Drawing.Size(165, 22);
+            this.checkBoxApplyCOStartup.Size = new System.Drawing.Size(165, 17);
             this.checkBoxApplyCOStartup.TabIndex = 55;
             this.checkBoxApplyCOStartup.Text = "Apply saved profile on startup";
             this.checkBoxApplyCOStartup.UseVisualStyleBackColor = true;
             this.checkBoxApplyCOStartup.Click += new System.EventHandler(this.CheckBoxApplyCOStartup_CheckedChanged);
             // 
-            // label51
+            // tabPageCS
             // 
-            this.label51.AutoSize = true;
-            this.label51.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label51.Location = new System.Drawing.Point(3, 318);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(33, 28);
-            this.label51.TabIndex = 56;
-            this.label51.Text = "FMax";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabPageCS.Controls.Add(this.tableLayoutPanel16);
+            this.tabPageCS.Location = new System.Drawing.Point(4, 40);
+            this.tabPageCS.Name = "tabPageCS";
+            this.tabPageCS.Size = new System.Drawing.Size(361, 356);
+            this.tabPageCS.TabIndex = 9;
+            this.tabPageCS.Text = "Curve Shaper";
+            this.tabPageCS.UseVisualStyleBackColor = true;
             // 
-            // buttonApplyFMax
+            // tableLayoutPanel16
             // 
-            this.buttonApplyFMax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonApplyFMax.Location = new System.Drawing.Point(243, 321);
-            this.buttonApplyFMax.Name = "buttonApplyFMax";
-            this.buttonApplyFMax.Size = new System.Drawing.Size(85, 22);
-            this.buttonApplyFMax.TabIndex = 58;
-            this.buttonApplyFMax.Text = "Apply";
-            this.buttonApplyFMax.UseVisualStyleBackColor = true;
-            this.buttonApplyFMax.Click += new System.EventHandler(this.ButtonApplyFMax_Click);
+            this.tableLayoutPanel16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel16.ColumnCount = 6;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Controls.Add(this.cs_min_high, 3, 1);
+            this.tableLayoutPanel16.Controls.Add(this.cs_min_med, 2, 1);
+            this.tableLayoutPanel16.Controls.Add(this.label38, 0, 5);
+            this.tableLayoutPanel16.Controls.Add(this.label37, 0, 4);
+            this.tableLayoutPanel16.Controls.Add(this.label36, 0, 3);
+            this.tableLayoutPanel16.Controls.Add(this.label35, 0, 2);
+            this.tableLayoutPanel16.Controls.Add(this.label34, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.label33, 3, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label32, 2, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label31, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.cs_min_low, 1, 1);
+            this.tableLayoutPanel16.Controls.Add(this.cs_low_low, 1, 2);
+            this.tableLayoutPanel16.Controls.Add(this.cs_low_med, 2, 2);
+            this.tableLayoutPanel16.Controls.Add(this.cs_low_high, 3, 2);
+            this.tableLayoutPanel16.Controls.Add(this.cs_med_low, 1, 3);
+            this.tableLayoutPanel16.Controls.Add(this.cs_med_med, 2, 3);
+            this.tableLayoutPanel16.Controls.Add(this.cs_med_high, 3, 3);
+            this.tableLayoutPanel16.Controls.Add(this.cs_high_low, 1, 4);
+            this.tableLayoutPanel16.Controls.Add(this.cs_high_med, 2, 4);
+            this.tableLayoutPanel16.Controls.Add(this.cs_high_high, 3, 4);
+            this.tableLayoutPanel16.Controls.Add(this.cs_max_low, 1, 5);
+            this.tableLayoutPanel16.Controls.Add(this.cs_max_med, 2, 5);
+            this.tableLayoutPanel16.Controls.Add(this.cs_max_high, 3, 5);
+            this.tableLayoutPanel16.Controls.Add(this.buttonApplyCS, 5, 1);
+            this.tableLayoutPanel16.Controls.Add(this.buttonRefreshCS, 5, 2);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 7;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(361, 356);
+            this.tableLayoutPanel16.TabIndex = 0;
             // 
-            // numericUpDownFmax
+            // cs_min_high
             // 
-            this.tableLayoutPanel12.SetColumnSpan(this.numericUpDownFmax, 2);
-            this.numericUpDownFmax.Dock = System.Windows.Forms.DockStyle.Left;
-            this.numericUpDownFmax.Increment = new decimal(new int[] {
-            25,
+            this.cs_min_high.Location = new System.Drawing.Point(180, 27);
+            this.cs_min_high.Maximum = new decimal(new int[] {
+            30,
             0,
             0,
             0});
-            this.numericUpDownFmax.Location = new System.Drawing.Point(63, 322);
-            this.numericUpDownFmax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.numericUpDownFmax.Maximum = new decimal(new int[] {
-            9000,
+            this.cs_min_high.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_min_high.Name = "cs_min_high";
+            this.cs_min_high.Size = new System.Drawing.Size(54, 20);
+            this.cs_min_high.TabIndex = 10;
+            // 
+            // cs_min_med
+            // 
+            this.cs_min_med.Location = new System.Drawing.Point(120, 27);
+            this.cs_min_med.Maximum = new decimal(new int[] {
+            30,
             0,
             0,
             0});
-            this.numericUpDownFmax.Name = "numericUpDownFmax";
-            this.numericUpDownFmax.Size = new System.Drawing.Size(66, 20);
-            this.numericUpDownFmax.TabIndex = 59;
+            this.cs_min_med.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_min_med.Name = "cs_min_med";
+            this.cs_min_med.Size = new System.Drawing.Size(54, 20);
+            this.cs_min_med.TabIndex = 9;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label38.Location = new System.Drawing.Point(3, 134);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(51, 26);
+            this.label38.TabIndex = 7;
+            this.label38.Text = "Maximum";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label37.Location = new System.Drawing.Point(3, 108);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(51, 26);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "High";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Location = new System.Drawing.Point(3, 82);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(51, 26);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Medium";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label35.Location = new System.Drawing.Point(3, 53);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(51, 29);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "Low";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label34.Location = new System.Drawing.Point(3, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(51, 29);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "Minimum";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Location = new System.Drawing.Point(180, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(54, 24);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "High T";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Location = new System.Drawing.Point(120, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(54, 24);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Medium T";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Location = new System.Drawing.Point(60, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(54, 24);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Low T";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cs_min_low
+            // 
+            this.cs_min_low.Location = new System.Drawing.Point(60, 27);
+            this.cs_min_low.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_min_low.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_min_low.Name = "cs_min_low";
+            this.cs_min_low.Size = new System.Drawing.Size(54, 20);
+            this.cs_min_low.TabIndex = 8;
+            // 
+            // cs_low_low
+            // 
+            this.cs_low_low.Location = new System.Drawing.Point(60, 56);
+            this.cs_low_low.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_low_low.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_low_low.Name = "cs_low_low";
+            this.cs_low_low.Size = new System.Drawing.Size(54, 20);
+            this.cs_low_low.TabIndex = 11;
+            // 
+            // cs_low_med
+            // 
+            this.cs_low_med.Location = new System.Drawing.Point(120, 56);
+            this.cs_low_med.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_low_med.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_low_med.Name = "cs_low_med";
+            this.cs_low_med.Size = new System.Drawing.Size(54, 20);
+            this.cs_low_med.TabIndex = 12;
+            // 
+            // cs_low_high
+            // 
+            this.cs_low_high.Location = new System.Drawing.Point(180, 56);
+            this.cs_low_high.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_low_high.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_low_high.Name = "cs_low_high";
+            this.cs_low_high.Size = new System.Drawing.Size(54, 20);
+            this.cs_low_high.TabIndex = 13;
+            // 
+            // cs_med_low
+            // 
+            this.cs_med_low.Location = new System.Drawing.Point(60, 85);
+            this.cs_med_low.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_med_low.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_med_low.Name = "cs_med_low";
+            this.cs_med_low.Size = new System.Drawing.Size(54, 20);
+            this.cs_med_low.TabIndex = 14;
+            // 
+            // cs_med_med
+            // 
+            this.cs_med_med.Location = new System.Drawing.Point(120, 85);
+            this.cs_med_med.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_med_med.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_med_med.Name = "cs_med_med";
+            this.cs_med_med.Size = new System.Drawing.Size(54, 20);
+            this.cs_med_med.TabIndex = 15;
+            // 
+            // cs_med_high
+            // 
+            this.cs_med_high.Location = new System.Drawing.Point(180, 85);
+            this.cs_med_high.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_med_high.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_med_high.Name = "cs_med_high";
+            this.cs_med_high.Size = new System.Drawing.Size(54, 20);
+            this.cs_med_high.TabIndex = 16;
+            // 
+            // cs_high_low
+            // 
+            this.cs_high_low.Location = new System.Drawing.Point(60, 111);
+            this.cs_high_low.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_high_low.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_high_low.Name = "cs_high_low";
+            this.cs_high_low.Size = new System.Drawing.Size(54, 20);
+            this.cs_high_low.TabIndex = 17;
+            // 
+            // cs_high_med
+            // 
+            this.cs_high_med.Location = new System.Drawing.Point(120, 111);
+            this.cs_high_med.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_high_med.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_high_med.Name = "cs_high_med";
+            this.cs_high_med.Size = new System.Drawing.Size(54, 20);
+            this.cs_high_med.TabIndex = 18;
+            // 
+            // cs_high_high
+            // 
+            this.cs_high_high.Location = new System.Drawing.Point(180, 111);
+            this.cs_high_high.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_high_high.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_high_high.Name = "cs_high_high";
+            this.cs_high_high.Size = new System.Drawing.Size(54, 20);
+            this.cs_high_high.TabIndex = 19;
+            // 
+            // cs_max_low
+            // 
+            this.cs_max_low.Location = new System.Drawing.Point(60, 137);
+            this.cs_max_low.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_max_low.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_max_low.Name = "cs_max_low";
+            this.cs_max_low.Size = new System.Drawing.Size(54, 20);
+            this.cs_max_low.TabIndex = 20;
+            // 
+            // cs_max_med
+            // 
+            this.cs_max_med.Location = new System.Drawing.Point(120, 137);
+            this.cs_max_med.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_max_med.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_max_med.Name = "cs_max_med";
+            this.cs_max_med.Size = new System.Drawing.Size(54, 20);
+            this.cs_max_med.TabIndex = 21;
+            // 
+            // cs_max_high
+            // 
+            this.cs_max_high.Location = new System.Drawing.Point(180, 137);
+            this.cs_max_high.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.cs_max_high.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            -2147483648});
+            this.cs_max_high.Name = "cs_max_high";
+            this.cs_max_high.Size = new System.Drawing.Size(54, 20);
+            this.cs_max_high.TabIndex = 22;
+            // 
+            // buttonApplyCS
+            // 
+            this.buttonApplyCS.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonApplyCS.Location = new System.Drawing.Point(283, 27);
+            this.buttonApplyCS.Name = "buttonApplyCS";
+            this.buttonApplyCS.Size = new System.Drawing.Size(75, 23);
+            this.buttonApplyCS.TabIndex = 23;
+            this.buttonApplyCS.Text = "Apply";
+            this.buttonApplyCS.UseVisualStyleBackColor = true;
+            this.buttonApplyCS.Click += new System.EventHandler(this.ButtonApplyCS_Click);
+            // 
+            // buttonRefreshCS
+            // 
+            this.buttonRefreshCS.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonRefreshCS.Location = new System.Drawing.Point(283, 56);
+            this.buttonRefreshCS.Name = "buttonRefreshCS";
+            this.buttonRefreshCS.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefreshCS.TabIndex = 24;
+            this.buttonRefreshCS.Text = "Refresh";
+            this.buttonRefreshCS.UseVisualStyleBackColor = true;
+            this.buttonRefreshCS.Click += new System.EventHandler(this.ButtonRefreshCS_Click);
             // 
             // tabPageWmi
             // 
             this.tabPageWmi.Controls.Add(this.tableLayoutPanel13);
             this.tabPageWmi.Location = new System.Drawing.Point(4, 40);
             this.tabPageWmi.Name = "tabPageWmi";
-            this.tabPageWmi.Size = new System.Drawing.Size(337, 356);
+            this.tabPageWmi.Size = new System.Drawing.Size(361, 356);
             this.tabPageWmi.TabIndex = 8;
             this.tabPageWmi.Text = "AMD ACPI";
             this.tabPageWmi.UseVisualStyleBackColor = true;
@@ -2775,7 +2643,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(337, 356);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(361, 356);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // label49
@@ -2807,7 +2675,7 @@ namespace ZenStatesDebugTool
             this.comboBoxAvailableCommands.FormattingEnabled = true;
             this.comboBoxAvailableCommands.Location = new System.Drawing.Point(93, 3);
             this.comboBoxAvailableCommands.Name = "comboBoxAvailableCommands";
-            this.comboBoxAvailableCommands.Size = new System.Drawing.Size(241, 21);
+            this.comboBoxAvailableCommands.Size = new System.Drawing.Size(265, 21);
             this.comboBoxAvailableCommands.TabIndex = 1;
             this.comboBoxAvailableCommands.SelectedIndexChanged += new System.EventHandler(this.ComboBoxAvailableCommands_SelectedIndexChanged);
             // 
@@ -2818,7 +2686,7 @@ namespace ZenStatesDebugTool
             this.comboBoxAvailableValues.FormattingEnabled = true;
             this.comboBoxAvailableValues.Location = new System.Drawing.Point(93, 30);
             this.comboBoxAvailableValues.Name = "comboBoxAvailableValues";
-            this.comboBoxAvailableValues.Size = new System.Drawing.Size(241, 21);
+            this.comboBoxAvailableValues.Size = new System.Drawing.Size(265, 21);
             this.comboBoxAvailableValues.TabIndex = 2;
             this.comboBoxAvailableValues.SelectedIndexChanged += new System.EventHandler(this.ComboBoxAvailableValues_SelectedIndexChanged);
             // 
@@ -2838,7 +2706,7 @@ namespace ZenStatesDebugTool
             this.textBoxWmiArgument.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxWmiArgument.Location = new System.Drawing.Point(93, 57);
             this.textBoxWmiArgument.Name = "textBoxWmiArgument";
-            this.textBoxWmiArgument.Size = new System.Drawing.Size(241, 20);
+            this.textBoxWmiArgument.Size = new System.Drawing.Size(265, 20);
             this.textBoxWmiArgument.TabIndex = 5;
             // 
             // buttonWmiCmdSend
@@ -2860,7 +2728,7 @@ namespace ZenStatesDebugTool
             this.tabPagePstates.Location = new System.Drawing.Point(4, 40);
             this.tabPagePstates.Name = "tabPagePstates";
             this.tabPagePstates.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePstates.Size = new System.Drawing.Size(337, 356);
+            this.tabPagePstates.Size = new System.Drawing.Size(361, 356);
             this.tabPagePstates.TabIndex = 3;
             this.tabPagePstates.Text = "PStates";
             this.tabPagePstates.UseVisualStyleBackColor = true;
@@ -2939,7 +2807,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(331, 128);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(355, 128);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label10
@@ -3040,7 +2908,7 @@ namespace ZenStatesDebugTool
             // 
             this.btnPstateWrite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPstateWrite.Enabled = false;
-            this.btnPstateWrite.Location = new System.Drawing.Point(246, 39);
+            this.btnPstateWrite.Location = new System.Drawing.Point(270, 39);
             this.btnPstateWrite.Name = "btnPstateWrite";
             this.btnPstateWrite.Size = new System.Drawing.Size(77, 23);
             this.btnPstateWrite.TabIndex = 11;
@@ -3051,7 +2919,7 @@ namespace ZenStatesDebugTool
             // btnPstateRead
             // 
             this.btnPstateRead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPstateRead.Location = new System.Drawing.Point(246, 8);
+            this.btnPstateRead.Location = new System.Drawing.Point(270, 8);
             this.btnPstateRead.Name = "btnPstateRead";
             this.btnPstateRead.Size = new System.Drawing.Size(77, 25);
             this.btnPstateRead.TabIndex = 12;
@@ -3065,7 +2933,7 @@ namespace ZenStatesDebugTool
             this.tabPageInfo.Location = new System.Drawing.Point(4, 40);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(337, 356);
+            this.tabPageInfo.Size = new System.Drawing.Size(361, 356);
             this.tabPageInfo.TabIndex = 2;
             this.tabPageInfo.Text = "Info";
             this.tabPageInfo.UseVisualStyleBackColor = true;
@@ -3114,7 +2982,7 @@ namespace ZenStatesDebugTool
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(331, 350);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(355, 350);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // buttonExport
@@ -3138,7 +3006,7 @@ namespace ZenStatesDebugTool
             this.smuInfoLabel.Location = new System.Drawing.Point(74, 212);
             this.smuInfoLabel.Name = "smuInfoLabel";
             this.smuInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.smuInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.smuInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.smuInfoLabel.TabIndex = 7;
             this.smuInfoLabel.Text = "-";
             this.smuInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3151,7 +3019,7 @@ namespace ZenStatesDebugTool
             this.biosInfoLabel.Location = new System.Drawing.Point(74, 166);
             this.biosInfoLabel.Name = "biosInfoLabel";
             this.biosInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.biosInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.biosInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.biosInfoLabel.TabIndex = 6;
             this.biosInfoLabel.Text = "-";
             this.biosInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3164,7 +3032,7 @@ namespace ZenStatesDebugTool
             this.mbVendorInfoLabel.Location = new System.Drawing.Point(74, 120);
             this.mbVendorInfoLabel.Name = "mbVendorInfoLabel";
             this.mbVendorInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.mbVendorInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.mbVendorInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.mbVendorInfoLabel.TabIndex = 5;
             this.mbVendorInfoLabel.Text = "-";
             this.mbVendorInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3225,7 +3093,7 @@ namespace ZenStatesDebugTool
             this.cpuInfoLabel.Location = new System.Drawing.Point(74, 5);
             this.cpuInfoLabel.Name = "cpuInfoLabel";
             this.cpuInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.cpuInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.cpuInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.cpuInfoLabel.TabIndex = 4;
             this.cpuInfoLabel.Text = "-";
             this.cpuInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3250,7 +3118,7 @@ namespace ZenStatesDebugTool
             this.mbModelInfoLabel.Location = new System.Drawing.Point(74, 143);
             this.mbModelInfoLabel.Name = "mbModelInfoLabel";
             this.mbModelInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.mbModelInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.mbModelInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.mbModelInfoLabel.TabIndex = 9;
             this.mbModelInfoLabel.Text = "-";
             this.mbModelInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3274,7 +3142,7 @@ namespace ZenStatesDebugTool
             this.cpuIdLabel.Location = new System.Drawing.Point(74, 28);
             this.cpuIdLabel.Name = "cpuIdLabel";
             this.cpuIdLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.cpuIdLabel.Size = new System.Drawing.Size(249, 23);
+            this.cpuIdLabel.Size = new System.Drawing.Size(273, 23);
             this.cpuIdLabel.TabIndex = 11;
             this.cpuIdLabel.Text = "-";
             this.cpuIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3297,7 +3165,7 @@ namespace ZenStatesDebugTool
             this.firmwareInfoLabel.Location = new System.Drawing.Point(74, 189);
             this.firmwareInfoLabel.Name = "firmwareInfoLabel";
             this.firmwareInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.firmwareInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.firmwareInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.firmwareInfoLabel.TabIndex = 13;
             this.firmwareInfoLabel.Text = "-";
             this.firmwareInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3331,7 +3199,7 @@ namespace ZenStatesDebugTool
             this.modelInfoLabel.Location = new System.Drawing.Point(74, 51);
             this.modelInfoLabel.Name = "modelInfoLabel";
             this.modelInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.modelInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.modelInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.modelInfoLabel.TabIndex = 16;
             this.modelInfoLabel.Text = "-";
             this.modelInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3343,7 +3211,7 @@ namespace ZenStatesDebugTool
             this.packageTypeInfoLabel.Location = new System.Drawing.Point(74, 74);
             this.packageTypeInfoLabel.Name = "packageTypeInfoLabel";
             this.packageTypeInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.packageTypeInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.packageTypeInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.packageTypeInfoLabel.TabIndex = 17;
             this.packageTypeInfoLabel.Text = "-";
             this.packageTypeInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3366,10 +3234,24 @@ namespace ZenStatesDebugTool
             this.configInfoLabel.Location = new System.Drawing.Point(74, 97);
             this.configInfoLabel.Name = "configInfoLabel";
             this.configInfoLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.configInfoLabel.Size = new System.Drawing.Size(249, 23);
+            this.configInfoLabel.Size = new System.Drawing.Size(273, 23);
             this.configInfoLabel.TabIndex = 19;
             this.configInfoLabel.Text = "-";
             this.configInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // buttonApplyCO
+            // 
+            this.buttonApplyCO.AutoSize = true;
+            this.buttonApplyCO.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonApplyCO.Location = new System.Drawing.Point(0, 0);
+            this.buttonApplyCO.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.buttonApplyCO.Name = "buttonApplyCO";
+            this.buttonApplyCO.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.buttonApplyCO.Size = new System.Drawing.Size(59, 23);
+            this.buttonApplyCO.TabIndex = 5;
+            this.buttonApplyCO.Text = "Apply";
+            this.buttonApplyCO.UseVisualStyleBackColor = true;
+            this.buttonApplyCO.Click += new System.EventHandler(this.ButtonApplyCO_Click);
             // 
             // textBoxResult
             // 
@@ -3403,8 +3285,8 @@ namespace ZenStatesDebugTool
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel11);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.splitContainer1.Panel2MinSize = 0;
-            this.splitContainer1.Size = new System.Drawing.Size(652, 410);
-            this.splitContainer1.SplitterDistance = 354;
+            this.splitContainer1.Size = new System.Drawing.Size(676, 410);
+            this.splitContainer1.SplitterDistance = 378;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -3427,7 +3309,7 @@ namespace ZenStatesDebugTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 432);
+            this.ClientSize = new System.Drawing.Size(676, 432);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -3435,7 +3317,7 @@ namespace ZenStatesDebugTool
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SMU Debug Tool";
+            this.Text = "``";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -3476,23 +3358,26 @@ namespace ZenStatesDebugTool
             this.tabPagePbo.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCO_15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFmax)).EndInit();
+            this.flowLayoutPanelPboActions.ResumeLayout(false);
+            this.tabPageCS.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_high)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_med)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_min_low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_med)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_low_high)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_med)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_med_high)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_med)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_high_high)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_med)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cs_max_high)).EndInit();
             this.tabPageWmi.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
@@ -3637,40 +3522,11 @@ namespace ZenStatesDebugTool
         private NumericUpDown textBoxCMD;
         private TabPage tabPagePbo;
         private TableLayoutPanel tableLayoutPanel12;
-        private NumericUpDown numericUpDownCO_8;
+        private System.Windows.Forms.TableLayoutPanel flowLayoutPanelPboActions;
+        private FlowLayoutPanel flowLayoutPanelCcdActions;
+        private FlowLayoutPanel flowLayoutPanelCOList;
         private Button buttonApplyCO;
-        private Label label31;
-        private Label label32;
-        private Label label33;
-        private Label label34;
-        private Label label35;
-        private Label label36;
-        private Label label37;
-        private Label label38;
-        private Label label39;
-        private Label label40;
-        private Label label41;
-        private Label label42;
-        private Label label43;
-        private Label label44;
-        private Label label45;
-        private Label label46;
         private Button buttonGetCO;
-        private NumericUpDown numericUpDownCO_0;
-        private NumericUpDown numericUpDownCO_1;
-        private NumericUpDown numericUpDownCO_2;
-        private NumericUpDown numericUpDownCO_3;
-        private NumericUpDown numericUpDownCO_4;
-        private NumericUpDown numericUpDownCO_5;
-        private NumericUpDown numericUpDownCO_6;
-        private NumericUpDown numericUpDownCO_7;
-        private NumericUpDown numericUpDownCO_9;
-        private NumericUpDown numericUpDownCO_10;
-        private NumericUpDown numericUpDownCO_11;
-        private NumericUpDown numericUpDownCO_12;
-        private NumericUpDown numericUpDownCO_13;
-        private NumericUpDown numericUpDownCO_14;
-        private NumericUpDown numericUpDownCO_15;
         private BindingSource bindingSource1;
         private TabPage tabPageWmi;
         private TableLayoutPanel tableLayoutPanel13;
@@ -3684,10 +3540,6 @@ namespace ZenStatesDebugTool
         private Label labelBCLK;
         private Button buttonBCLKApply;
         private NumericUpDown numericUpDownBclk;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
         private TableLayoutPanel tableLayoutPanel14;
         private Label label50;
         private TextBox textBoxCpuid;
@@ -3750,6 +3602,33 @@ namespace ZenStatesDebugTool
         private TextBox textBoxDumpEndAddress;
         private TextBox textBoxDumpName;
         private Button buttonDump;
+        private TabPage tabPageCS;
+        private TableLayoutPanel tableLayoutPanel16;
+        private Label label33;
+        private Label label32;
+        private Label label31;
+        private Label label38;
+        private Label label37;
+        private Label label36;
+        private Label label35;
+        private Label label34;
+        private NumericUpDown cs_min_high;
+        private NumericUpDown cs_min_med;
+        private NumericUpDown cs_min_low;
+        private NumericUpDown cs_low_low;
+        private NumericUpDown cs_low_med;
+        private NumericUpDown cs_low_high;
+        private NumericUpDown cs_med_low;
+        private NumericUpDown cs_med_med;
+        private NumericUpDown cs_med_high;
+        private NumericUpDown cs_high_low;
+        private NumericUpDown cs_high_med;
+        private NumericUpDown cs_high_high;
+        private NumericUpDown cs_max_low;
+        private NumericUpDown cs_max_med;
+        private NumericUpDown cs_max_high;
+        private Button buttonApplyCS;
+        private Button buttonRefreshCS;
     }
 }
 
