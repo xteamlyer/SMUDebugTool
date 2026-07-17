@@ -2202,7 +2202,7 @@ namespace ZenStatesDebugTool
             // 
             this.tableLayoutPanel16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel16.ColumnCount = 6;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -2249,7 +2249,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_min_high
             // 
-            this.cs_min_high.Location = new System.Drawing.Point(180, 27);
+            this.cs_min_high.Location = new System.Drawing.Point(168, 27);
             this.cs_min_high.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2266,7 +2266,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_min_med
             // 
-            this.cs_min_med.Location = new System.Drawing.Point(120, 27);
+            this.cs_min_med.Location = new System.Drawing.Point(108, 27);
             this.cs_min_med.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2287,9 +2287,9 @@ namespace ZenStatesDebugTool
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label38.Location = new System.Drawing.Point(3, 134);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(51, 26);
+            this.label38.Size = new System.Drawing.Size(39, 26);
             this.label38.TabIndex = 7;
-            this.label38.Text = "Maximum";
+            this.label38.Text = "Max";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label37
@@ -2298,7 +2298,7 @@ namespace ZenStatesDebugTool
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Location = new System.Drawing.Point(3, 108);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(51, 26);
+            this.label37.Size = new System.Drawing.Size(39, 26);
             this.label37.TabIndex = 6;
             this.label37.Text = "High";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2309,9 +2309,9 @@ namespace ZenStatesDebugTool
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Location = new System.Drawing.Point(3, 82);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 26);
+            this.label36.Size = new System.Drawing.Size(39, 26);
             this.label36.TabIndex = 5;
-            this.label36.Text = "Medium";
+            this.label36.Text = "Med";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label35
@@ -2320,7 +2320,7 @@ namespace ZenStatesDebugTool
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Location = new System.Drawing.Point(3, 53);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(51, 29);
+            this.label35.Size = new System.Drawing.Size(39, 29);
             this.label35.TabIndex = 4;
             this.label35.Text = "Low";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2331,16 +2331,16 @@ namespace ZenStatesDebugTool
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Location = new System.Drawing.Point(3, 24);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(51, 29);
+            this.label34.Size = new System.Drawing.Size(39, 29);
             this.label34.TabIndex = 3;
-            this.label34.Text = "Minimum";
+            this.label34.Text = "Min";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Location = new System.Drawing.Point(180, 0);
+            this.label33.Location = new System.Drawing.Point(168, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(54, 24);
             this.label33.TabIndex = 2;
@@ -2351,18 +2351,18 @@ namespace ZenStatesDebugTool
             // 
             this.label32.AutoSize = true;
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Location = new System.Drawing.Point(120, 0);
+            this.label32.Location = new System.Drawing.Point(108, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(54, 24);
             this.label32.TabIndex = 1;
-            this.label32.Text = "Medium T";
+            this.label32.Text = "Med T";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Location = new System.Drawing.Point(60, 0);
+            this.label31.Location = new System.Drawing.Point(48, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(54, 24);
             this.label31.TabIndex = 0;
@@ -2371,7 +2371,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_min_low
             // 
-            this.cs_min_low.Location = new System.Drawing.Point(60, 27);
+            this.cs_min_low.Location = new System.Drawing.Point(48, 27);
             this.cs_min_low.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2388,7 +2388,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_low_low
             // 
-            this.cs_low_low.Location = new System.Drawing.Point(60, 56);
+            this.cs_low_low.Location = new System.Drawing.Point(48, 56);
             this.cs_low_low.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2405,7 +2405,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_low_med
             // 
-            this.cs_low_med.Location = new System.Drawing.Point(120, 56);
+            this.cs_low_med.Location = new System.Drawing.Point(108, 56);
             this.cs_low_med.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2422,7 +2422,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_low_high
             // 
-            this.cs_low_high.Location = new System.Drawing.Point(180, 56);
+            this.cs_low_high.Location = new System.Drawing.Point(168, 56);
             this.cs_low_high.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2439,7 +2439,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_med_low
             // 
-            this.cs_med_low.Location = new System.Drawing.Point(60, 85);
+            this.cs_med_low.Location = new System.Drawing.Point(48, 85);
             this.cs_med_low.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2456,7 +2456,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_med_med
             // 
-            this.cs_med_med.Location = new System.Drawing.Point(120, 85);
+            this.cs_med_med.Location = new System.Drawing.Point(108, 85);
             this.cs_med_med.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2473,7 +2473,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_med_high
             // 
-            this.cs_med_high.Location = new System.Drawing.Point(180, 85);
+            this.cs_med_high.Location = new System.Drawing.Point(168, 85);
             this.cs_med_high.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2490,7 +2490,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_high_low
             // 
-            this.cs_high_low.Location = new System.Drawing.Point(60, 111);
+            this.cs_high_low.Location = new System.Drawing.Point(48, 111);
             this.cs_high_low.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2507,7 +2507,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_high_med
             // 
-            this.cs_high_med.Location = new System.Drawing.Point(120, 111);
+            this.cs_high_med.Location = new System.Drawing.Point(108, 111);
             this.cs_high_med.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2524,7 +2524,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_high_high
             // 
-            this.cs_high_high.Location = new System.Drawing.Point(180, 111);
+            this.cs_high_high.Location = new System.Drawing.Point(168, 111);
             this.cs_high_high.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2541,7 +2541,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_max_low
             // 
-            this.cs_max_low.Location = new System.Drawing.Point(60, 137);
+            this.cs_max_low.Location = new System.Drawing.Point(48, 137);
             this.cs_max_low.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2558,7 +2558,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_max_med
             // 
-            this.cs_max_med.Location = new System.Drawing.Point(120, 137);
+            this.cs_max_med.Location = new System.Drawing.Point(108, 137);
             this.cs_max_med.Maximum = new decimal(new int[] {
             30,
             0,
@@ -2575,7 +2575,7 @@ namespace ZenStatesDebugTool
             // 
             // cs_max_high
             // 
-            this.cs_max_high.Location = new System.Drawing.Point(180, 137);
+            this.cs_max_high.Location = new System.Drawing.Point(168, 137);
             this.cs_max_high.Maximum = new decimal(new int[] {
             30,
             0,

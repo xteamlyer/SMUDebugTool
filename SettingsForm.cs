@@ -388,43 +388,52 @@ namespace ZenStatesDebugTool
             flowLayoutPanelCcdActions.Controls.Clear();
             flowLayoutPanelCcdActions.WrapContents = false;
             flowLayoutPanelCcdActions.Visible = true;
+            //flowLayoutPanelCcdActions.AutoSize = false;
+            flowLayoutPanelCcdActions.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanelCcdActions.Dock = DockStyle.Fill;
 
             Button applyBtn = new Button
             {
                 AutoSize = true,
-                AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Margin = new Padding(0, 0, 6, 0),
-                Padding = new Padding(8, 0, 8, 0),
+                AutoSizeMode = AutoSizeMode.GrowOnly,
+                Margin = new Padding(1, 0, 1, 0),
+                Padding = new Padding(0),
+                Size = new Size(106, 25),
                 Text = "Apply",
-                UseVisualStyleBackColor = true
+                UseVisualStyleBackColor = true,
+                Dock = DockStyle.Fill,
             };
             applyBtn.Click += ButtonApplyCO_Click;
 
             Button allDecBtn = new Button
             {
                 AutoSize = true,
-                AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Margin = new Padding(0, 0, 2, 0),
-                Padding = new Padding(6, 0, 6, 0),
+                AutoSizeMode = AutoSizeMode.GrowOnly,
+                Margin = new Padding(1, 0, 1, 0),
+                Padding = new Padding(0),
+                Size = new Size(106, 25),
                 Text = "All \u2212",
-                UseVisualStyleBackColor = true
+                UseVisualStyleBackColor = true,
+                Dock = DockStyle.Fill,
             };
             allDecBtn.Click += AllCcdDecrement_Click;
 
             Button allIncBtn = new Button
             {
                 AutoSize = true,
-                AutoSizeMode = AutoSizeMode.GrowAndShrink,
-                Margin = new Padding(0),
-                Padding = new Padding(6, 0, 6, 0),
+                AutoSizeMode = AutoSizeMode.GrowOnly,
+                Margin = new Padding(1, 0, 1, 0),
+                Padding = new Padding(0),
+                Size = new Size(106, 25),
                 Text = "All +",
-                UseVisualStyleBackColor = true
+                UseVisualStyleBackColor = true,
+                Dock = DockStyle.Fill,
             };
             allIncBtn.Click += AllCcdIncrement_Click;
 
-            flowLayoutPanelCcdActions.Controls.Add(applyBtn);
             flowLayoutPanelCcdActions.Controls.Add(allDecBtn);
             flowLayoutPanelCcdActions.Controls.Add(allIncBtn);
+            flowLayoutPanelCcdActions.Controls.Add(applyBtn);
         }
 
         private void AllCcdDecrement_Click(object sender, EventArgs e)
