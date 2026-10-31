@@ -10,6 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
       - name: Setup NuGet
         uses: nuget/setup-nuget@main
